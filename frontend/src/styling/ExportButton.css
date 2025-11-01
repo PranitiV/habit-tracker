@@ -1,0 +1,31 @@
+.export-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.export-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+}
+
+.export-button-csv {
+  background-color: #2563eb;
+}
+
+.export-button-csv:hover {
+  background-color: #1d4ed8;
+}
+
+.export-button-pdf {
+  background-color: #dc2626;
+}
+
+.export-button-pdf:hover {
+  background-color: #b91c1c;
+}
