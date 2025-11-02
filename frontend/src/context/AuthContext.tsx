@@ -59,7 +59,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (!response.ok) {
       throw new Error("Registration failed")
     }
-    const data = await response.json()
+    await response.json()
     await login(email, password)
   }
 

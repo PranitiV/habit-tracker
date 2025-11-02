@@ -24,14 +24,12 @@ export default function HabitDetailModal({ habit, onClose }: HabitDetailModalPro
   const [weeklyTrend, setWeeklyTrend] = useState<any[]>([])
   const [monthlyTrend, setMonthlyTrend] = useState<any[]>([])
   const [chartData, setChartData] = useState<any[]>([])
-  const [loading, setLoading] = useState(true)
   const [logValue, setLogValue] = useState("")
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split("T")[0])
   const [activeTab, setActiveTab] = useState<"logs" | "weekly" | "monthly" | "daily">("logs")
   const { token } = useAuth()
 
-  const API_URL = (import.meta as any).env.VITE_API_URL || "http://localhost:8000"
-  const todayISO = useMemo(() => new Date().toISOString().split("T")[0], [])
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000"
 
   useEffect(() => {
     fetchData()
@@ -75,8 +73,6 @@ export default function HabitDetailModal({ habit, onClose }: HabitDetailModalPro
       if (chartRes.ok) setChartData(await chartRes.json())
     } catch (err) {
       console.error(err)
-    } finally {
-      setLoading(false)
     }
   }
 
